@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with GPT-4</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>GPT-4 API Interface</h1>
+    <div class="main-content">
+        <!-- Move the system message input box to the left -->
+        <div class="system-message-input">
+            <textarea id="system-message" placeholder="Enter a system message..."></textarea>
+<!--            <button id="set-system-message">Set System Message</button>-->
+        </div>
+        <div class="chat-wrapper">
+            <div class="chat">
+                <div class="chat-area" id="chat-area"></div>
+                <form id="chat-form">
+                    <input type="text" id="user-input" placeholder="Type your message...">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>
