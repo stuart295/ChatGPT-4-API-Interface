@@ -67,6 +67,7 @@ instance/
 
 # Scrapy stuff:
 .scrapy
+sec
 
 # Sphinx documentation
 docs/_build/
@@ -127,3 +128,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Other
+secrets.txt
+.idea
