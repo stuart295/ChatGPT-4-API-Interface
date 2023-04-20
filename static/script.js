@@ -39,13 +39,32 @@ $(document).ready(function () {
     }
 });
 
-    function addMessage(sender, message) {
-       let messageParagraph = $('<p>');
+    function addMessage(role, message) {
+        // Wrap the sender in a span element with a class 'sender'
+        var sender = $('<span>').addClass('sender').text(role + ': ');
 
-        message = md.render(message);
+        // Convert the message content from Markdown to HTML
+        var messageHtml = md.render(message);
 
-        messageParagraph.html("<b>"+ sender + "</b><br>" + message);
-        $('#chat-area').append(messageParagraph);
+        // Wrap the message in a span element with a class 'message-content'
+        var messageContent = $('<span>').addClass('message-content').html(messageHtml);
+
+        // Create a new div element for the message and append the sender and message content
+        var newMessage = $('<div>').addClass('message ' + role).append(sender).append(messageContent);
+
+        // Add the new message to the chat area and scroll to the bottom
+        $('#chat-area').append(newMessage);
         $('#chat-area').scrollTop($('#chat-area')[0].scrollHeight);
     }
+
+     $('#user-input').on('keydown', function(e) {
+        // Check if the Enter key is pressed
+        if (e.key === 'Enter') {
+            if (!e.shiftKey) {
+                e.preventDefault();
+
+                $('#chat-form').submit();
+            }
+        }
+    });
 });
