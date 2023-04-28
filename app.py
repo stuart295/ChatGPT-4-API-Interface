@@ -1,3 +1,5 @@
+import json
+
 import openai
 from pathlib import Path
 from flask import Flask, render_template, request, jsonify
@@ -55,6 +57,18 @@ def ask():
     conversation.append({'role': 'assistant', 'content': gpt4_response})
 
     return jsonify({'response': gpt4_response})
+
+@app.route('/save', methods=['GET'])
+def save_chat():
+    global conversation
+    return jsonify(conversation)
+
+@app.route('/load', methods=['POST'])
+def load_chat():
+    global conversation
+    conversation = request.json
+    return jsonify({'response': 'ok'})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

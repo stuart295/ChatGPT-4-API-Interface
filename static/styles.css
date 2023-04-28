@@ -130,3 +130,13 @@ button:hover {
 .message.user {
     margin-bottom: 20px;
 }
+
+.save-load-area {
+    width: 100%;
+    display: flex;
+}
+
+.save-load-buttons {
+    flex-grow: 1;
+    margin: 2px;
+}

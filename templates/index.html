@@ -13,10 +13,13 @@
 <div class="container">
     <h1>GPT-4 API Interface</h1>
     <div class="main-content">
-        <!-- Move the system message input box to the left -->
         <div class="system-message-input">
             <textarea id="system-message" placeholder="Enter a system message..."></textarea>
-<!--            <button id="set-system-message">Set System Message</button>-->
+            <div class="save-load-area">
+                <button class="save-load-buttons" id="save-chat">Save chat</button>
+                <input type="file" id="file-input" style="display: none;">
+                <button class="save-load-buttons" id="load-chat">Load chat</button>
+            </div>
         </div>
         <div class="chat-wrapper">
             <div class="chat">
